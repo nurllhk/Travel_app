@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:travleapp/repository/favorite.dart';
 
-class postbar extends StatefulWidget {
-  postbar({Key? key}) : super(key: key);
+class postbar extends ConsumerWidget {
+  int index;
+  postbar(this.index, {Key? key}) : super(key: key);
   bool favori = false;
 
-  @override
-  State<postbar> createState() => _postbarState();
-}
 
-class _postbarState extends State<postbar> {
   @override
-  Widget build(BuildContext context) {
-    bool favori = true;
+  Widget build(BuildContext context,WidgetRef ref) {
     return Padding(
       padding: EdgeInsets.all(20),
       child: Row(
@@ -40,17 +38,16 @@ class _postbarState extends State<postbar> {
           ),
           SafeArea(
             child: InkWell(
-              onTap: () {},
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (favori == false) {
-                      favori = true;
-                    } else {
-                      favori = false;
-                    }
-                  });
-                },
+              onTap: () {
+                if(ref.read(favoriteProvider).favorites.contains(index)){
+                  ref.read(favoriteProvider).favorites.removeAt(index);
+                }else{
+
+                  ref.read(favoriteProvider).favorites.add(index);
+                }
+
+
+              },
                 child: Container(
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -60,10 +57,10 @@ class _postbarState extends State<postbar> {
                           BoxShadow(color: Colors.black26, blurRadius: 2)
                         ]),
                     child: Icon(
-                      Icons.favorite_outline,
+                      ref.watch(favoriteProvider).favorites.contains(index) ? Icons.favorite:Icons.favorite_outline,
                       size: 28,
                     )),
-              ),
+
             ),
           ),
         ],

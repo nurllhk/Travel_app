@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
+import 'package:lottie/lottie.dart';
 
 import 'home.dart';
 
@@ -19,58 +21,52 @@ class welcome extends StatelessWidget {
 
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 65, horizontal: 25),
-            child: Column(
-              crossAxisAlignment:CrossAxisAlignment.start,
-              children: [
-                Text('NK', style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.3
-                ),),
-                SizedBox(
-                  height: 2,
-                ),
-                Text("Dünyaya Gel", style: TextStyle(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment:CrossAxisAlignment.start,
+                children: [
+                  Text('NK', style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.3
+                  ),),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Text("Dünyayamıza Gel", style: TextStyle(
 
-                  color: Colors.white.withOpacity(0.8),
-                  fontSize: 35,
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: 1.3
+                    color: Colors.white.withOpacity(0.8),
+                    fontSize: 35,
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.3
 
-                ),),
-                SizedBox(height: 12,),
-                Text("Lorem Ipsum is simply dummy text of "
-                    "the printing and typesetting industry. Lorem Ipsum "
-                    "has been the industry's standard dummy text ever since the 15"
-                    "00s, when an unknown printer took a galley of type and scrambled it"
-                 , style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
-                  fontSize: 16,
-                  letterSpacing: 1.3
-                ),
-                 ),
-                SizedBox(height: 30,),
-                InkWell(
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                      return home();
-                    }));
+                  ),),
+
+                  SizedBox(height: 30,),
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return Home();
+                      }));
 
 
-                  },
-                  child: Ink(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12)),
-                    child: Icon(
-                      Icons.navigate_next_sharp,
-                      color: Colors.black,
-                      size: 23,
+                    },
+                    child: Ink(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12)),
+                      child: Icon(
+                        Icons.navigate_next_sharp,
+                        color: Colors.black,
+                        size: 23,
 
+                      ),
                     ),
                   ),
-                )
-              ],
+                  SizedBox(height: 14,),
+                  Lottie.network("https://lottie.host/1c2658cb-31fb-4932-bb26-cabb5a937b08/z0fmKcLdf6.json")
+                ],
+              ),
             ),
           ),
         ),
