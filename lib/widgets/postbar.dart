@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:travleapp/repository/favorite.dart';
 
-class postbar extends ConsumerWidget {
+class PostBar extends ConsumerWidget {
   int index;
-  postbar(this.index, {Key? key}) : super(key: key);
+
+  PostBar(this.index, {Key? key}) : super(key: key);
   bool favori = false;
 
-
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -22,14 +22,14 @@ class postbar extends ConsumerWidget {
             child: SafeArea(
               child: Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.white,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(color: Colors.black26, blurRadius: 2)
                     ]),
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_back_ios_new_sharp,
                   size: 28,
                 ),
@@ -39,28 +39,26 @@ class postbar extends ConsumerWidget {
           SafeArea(
             child: InkWell(
               onTap: () {
-                if(ref.read(favoriteProvider).favorites.contains(index)){
-                  ref.read(favoriteProvider).favorites.removeAt(index);
-                }else{
-
-                  ref.read(favoriteProvider).favorites.add(index);
+                if (ref.read(favoriteProvider).DoILove(index + 1)) {
+                  ref.read(favoriteProvider).DeleteLove(index + 1);
+                } else {
+                  ref.read(favoriteProvider).addFavori(index + 1);
                 }
-
-
               },
-                child: Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(color: Colors.black26, blurRadius: 2)
-                        ]),
-                    child: Icon(
-                      ref.watch(favoriteProvider).favorites.contains(index) ? Icons.favorite:Icons.favorite_outline,
-                      size: 28,
-                    )),
-
+              child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: const [
+                        BoxShadow(color: Colors.black26, blurRadius: 2)
+                      ]),
+                  child: Icon(
+                    ref.watch(favoriteProvider).DoILove(index + 1)
+                        ? Icons.favorite
+                        : Icons.favorite_outline,
+                    size: 28,
+                  )),
             ),
           ),
         ],

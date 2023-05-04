@@ -17,7 +17,7 @@ class post extends ConsumerWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: PreferredSize( preferredSize: Size.fromHeight(90), child:postbar(index),),
+        appBar: PreferredSize( preferredSize: Size.fromHeight(90), child:PostBar(index),),
         bottomNavigationBar: postbottom(),
       ),
       

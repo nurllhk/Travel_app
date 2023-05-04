@@ -6,7 +6,22 @@ class favori extends ChangeNotifier {
 
   void addFavori(add) {
     favorites.add(add);
+    notifyListeners();
   }
+
+  DoILove(int index) {
+    return favorites.contains(index);
+  }
+
+  void DeleteLove(int delete) {
+    favorites.remove(delete);
+    notifyListeners();
+  }
+
+  myfav() {
+
+  }
+
 }
 
 var favoriteProvider = ChangeNotifierProvider((ref) {

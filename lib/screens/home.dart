@@ -23,18 +23,19 @@ class Home extends ConsumerStatefulWidget {
 class _HomeState extends ConsumerState<Home> {
   var currunindex;
   var pagelist = [
-    firstpage(city: city, favory: favory, category: category),
+    firstpage(),
     myFavorites(),
     addCity(),
     location(),
     myProfile(),
   ];
 
-  static get city => cityName();
+/*
+*   static get city => cityName();
 
   static get favory => favori();
 
-  static get category => categorys();
+  static get category => categorys();*/
 
   // firstpage(city: city, favory: favory, category: category)
 
@@ -85,23 +86,19 @@ class _HomeState extends ConsumerState<Home> {
   }
 }
 
-class firstpage extends StatefulWidget {
+class firstpage extends ConsumerStatefulWidget {
   const firstpage({
-    super.key,
-    required this.city,
-    required this.favory,
-    required this.category,
+    super.key
   });
 
-  final cityName city;
-  final favori favory;
-  final categorys category;
+
 
   @override
-  State<firstpage> createState() => _firstpageState();
+  ConsumerState<firstpage> createState() => _firstpageState();
 }
 
-class _firstpageState extends State<firstpage> {
+class _firstpageState extends ConsumerState<firstpage> {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -116,7 +113,7 @@ class _firstpageState extends State<firstpage> {
                       child: SizedBox(
                     height: 200,
                     child: ListView.builder(
-                      itemCount: widget.city.city.length,
+                      itemCount: ref.watch(cityProvider).city.length,
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) {
@@ -144,7 +141,7 @@ class _firstpageState extends State<firstpage> {
                                 Container(
                                   alignment: Alignment.topRight,
                                   child: Icon(
-                                    widget.favory.favorites.contains(index)
+                                    ref.watch(favoriteProvider).DoILove(index+1)
                                         ? Icons.favorite
                                         : Icons.favorite_outline,
                                     color: Colors.white,
@@ -154,7 +151,7 @@ class _firstpageState extends State<firstpage> {
                                 Container(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
-                                    widget.city.city[index],
+                                    ref.watch(cityProvider).city[index],
                                     style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
@@ -191,7 +188,7 @@ class _firstpageState extends State<firstpage> {
                             ],
                           ),
                           child: Text(
-                            widget.category.category[x],
+                            ref.watch(categoryProvider).category[x],
                             style: const TextStyle(
                                 fontWeight: FontWeight.w500, fontSize: 15),
                           ),
@@ -205,7 +202,7 @@ class _firstpageState extends State<firstpage> {
               ),
               ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: widget.city.city.length,
+                  itemCount: ref.watch(cityProvider).city.length,
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
@@ -237,7 +234,7 @@ class _firstpageState extends State<firstpage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  widget.city.city[index],
+                                  ref.watch(cityProvider).city[index],
                                   style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w600,
