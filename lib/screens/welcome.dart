@@ -10,7 +10,7 @@ class welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration:const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("images/bg.jpg"),
               fit: BoxFit.cover,
@@ -25,13 +25,13 @@ class welcome extends StatelessWidget {
               child: Column(
                 crossAxisAlignment:CrossAxisAlignment.start,
                 children: [
-                  Text('NK', style: TextStyle(
+                 const Text('NK', style: TextStyle(
                     color: Colors.white,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.3
                   ),),
-                  SizedBox(
+                  const SizedBox(
                     height: 2,
                   ),
                   Text("Dünyayamıza Gel", style: TextStyle(
@@ -43,7 +43,7 @@ class welcome extends StatelessWidget {
 
                   ),),
 
-                  SizedBox(height: 30,),
+                 const SizedBox(height: 30,),
                   InkWell(
                     onTap: (){
                       Navigator.of(context).push(MaterialPageRoute(builder: (context){
@@ -55,7 +55,7 @@ class welcome extends StatelessWidget {
                     child: Ink(
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.navigate_next_sharp,
                         color: Colors.black,
                         size: 23,
@@ -63,8 +63,8 @@ class welcome extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 14,),
-                  Lottie.network("https://lottie.host/1c2658cb-31fb-4932-bb26-cabb5a937b08/z0fmKcLdf6.json")
+                const SizedBox(height: 14,),
+                  //Lottie.network("https://lottie.host/1c2658cb-31fb-4932-bb26-cabb5a937b08/z0fmKcLdf6.json")
                 ],
               ),
             ),

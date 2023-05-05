@@ -1,41 +1,47 @@
 import 'package:flutter/material.dart';
 
-class homeappbar extends StatelessWidget {
-  const homeappbar({Key? key}) : super(key: key);
+class homeappbar extends StatefulWidget {
 
+  const homeappbar( {Key? key}) : super(key: key);
+
+  @override
+  State<homeappbar> createState() => _homeappbarState();
+}
+
+class _homeappbarState extends State<homeappbar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding:const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-       crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SafeArea(
-              child: InkWell(
+            child: InkWell(
 
-                onTap: (){},
-                child: Container(
-                  padding: EdgeInsets.all(10),
+              onTap: (){},
+              child: Container(
+                padding:const EdgeInsets.all(10),
 
-                  decoration: BoxDecoration(
+                decoration: BoxDecoration(
 
-                    borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12),
 
-                  ),
-                  child: Icon(Icons.sort_rounded,size: 38,),
                 ),
-
+                child:const  Icon(Icons.sort_rounded,size: 38,),
               ),
+
+            ),
 
           ),
           SafeArea(
             child: Row(
-              children: [
+              children: const [
                 Icon(Icons.location_pin,color: Color(0xFFF65050),),
                 Text("Diyarbakır, TR", style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500
                 ),)
               ],
             ),

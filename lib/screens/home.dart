@@ -23,11 +23,11 @@ class Home extends ConsumerStatefulWidget {
 class _HomeState extends ConsumerState<Home> {
   var currunindex;
   var pagelist = [
-    firstpage(),
-    myFavorites(),
-    addCity(),
-    location(),
-    myProfile(),
+    const firstpage(),
+    const myFavorites(),
+    const addCity(),
+    const location(),
+    const myProfile(),
   ];
 
 /*
@@ -46,8 +46,10 @@ class _HomeState extends ConsumerState<Home> {
     final category = ref.watch(categoryProvider);
 
     return Scaffold(
-      appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(90.0), child: homeappbar()),
+      appBar: currunindex == 3
+          ? null
+          : const PreferredSize(
+              preferredSize: Size.fromHeight(90.0), child: homeappbar()),
       body: pagelist[currunindex == null ? 0 : currunindex],
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
@@ -68,6 +70,7 @@ class _HomeState extends ConsumerState<Home> {
           ),
           Icon(
             Icons.location_on_outlined,
+            color: Colors.lightGreen,
             size: 30,
           ),
           Icon(
@@ -87,18 +90,13 @@ class _HomeState extends ConsumerState<Home> {
 }
 
 class firstpage extends ConsumerStatefulWidget {
-  const firstpage({
-    super.key
-  });
-
-
+  const firstpage({super.key});
 
   @override
   ConsumerState<firstpage> createState() => _firstpageState();
 }
 
 class _firstpageState extends ConsumerState<firstpage> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -141,7 +139,9 @@ class _firstpageState extends ConsumerState<firstpage> {
                                 Container(
                                   alignment: Alignment.topRight,
                                   child: Icon(
-                                    ref.watch(favoriteProvider).DoILove(index+1)
+                                    ref
+                                            .watch(favoriteProvider)
+                                            .DoILove(index + 1)
                                         ? Icons.favorite
                                         : Icons.favorite_outline,
                                     color: Colors.white,
