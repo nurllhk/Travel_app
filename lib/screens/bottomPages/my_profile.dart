@@ -10,6 +10,10 @@ class myProfile extends StatefulWidget {
 class _myProfileState extends State<myProfile> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child:Text("Profil Sayfası") ,
+      ),
+    );
   }
 }

@@ -53,12 +53,16 @@ class PostBar extends ConsumerWidget {
                       boxShadow: const [
                         BoxShadow(color: Colors.black26, blurRadius: 2)
                       ]),
-                  child: Icon(
-                    ref.watch(favoriteProvider).DoILove(index + 1)
-                        ? Icons.favorite
-                        : Icons.favorite_outline,
-                    size: 28,
-                  )),
+                  child: ref.watch(favoriteProvider).DoILove(index + 1)
+                      ?const Icon(
+                          Icons.favorite,
+                          color: Colors.redAccent,
+                          size: 28,
+                        )
+                      : const Icon(
+                          Icons.favorite_outline,
+                          size: 28,
+                        )),
             ),
           ),
         ],

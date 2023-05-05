@@ -10,6 +10,10 @@ class addCity extends StatefulWidget {
 class _addCityState extends State<addCity> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Text("Fotoğraf Ekleme Sayfası"),
+      ),
+    );
   }
 }

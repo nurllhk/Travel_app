@@ -81,7 +81,7 @@ class _HomeState extends ConsumerState<Home> {
         onTap: (int index) {
           setState(() {
             currunindex = index;
-            print(currunindex);
+
           });
         },
       ),

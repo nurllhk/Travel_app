@@ -14,13 +14,11 @@ class favori extends ChangeNotifier {
   }
 
   void DeleteLove(int delete) {
-    favorites.remove(delete);
+   int del= favorites.elementAt(delete);
+   favorites.remove(del);
     notifyListeners();
   }
 
-  myfav() {
-
-  }
 
 }
 

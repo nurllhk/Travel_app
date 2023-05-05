@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:lottie/lottie.dart';
 import 'package:travleapp/repository/favorite.dart';
 
 import '../../repository/cityname.dart';
@@ -19,7 +20,9 @@ class _myFavoritesState extends ConsumerState<myFavorites> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            ListView.builder(
+           ref.watch(favoriteProvider).favorites.length==0?  Center(
+             child:Lottie.network("https://assets8.lottiefiles.com/packages/lf20_khnalzic.json"),
+           ): ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: ref.watch(favoriteProvider).favorites.length,
                 shrinkWrap: true,
@@ -42,16 +45,23 @@ class _myFavoritesState extends ConsumerState<myFavorites> {
                                 borderRadius: BorderRadius.circular(15),
                                 image: DecorationImage(
                                     image: AssetImage(
-                                        "images/city${ref.watch(favoriteProvider).favorites.elementAt(index) + 1}.jpg"),
+                                        "images/city${ref.watch(favoriteProvider).favorites.elementAt(index) == 0 ? 1 : ref.watch(favoriteProvider).favorites.elementAt(index)}.jpg"),
                                     fit: BoxFit.cover,
                                     opacity: 0.8)),
                             child: Container(
-                              padding: EdgeInsets.all(15),
+                              padding:const EdgeInsets.all(15),
                               alignment: Alignment.topRight,
-                              child: IconButton(onPressed: (){
-                                ref.watch(favoriteProvider).DeleteLove(index+1);
-
-                              }, icon:Icon(Icons.favorite,color: Colors.redAccent,size: 33,)),
+                              child: IconButton(
+                                  onPressed: () {
+                                    ref
+                                        .watch(favoriteProvider)
+                                        .DeleteLove(index);
+                                  },
+                                  icon:const Icon(
+                                    Icons.favorite,
+                                    color: Colors.redAccent,
+                                    size: 33,
+                                  )),
                             ),
                           ),
                         ),
@@ -95,4 +105,6 @@ class _myFavoritesState extends ConsumerState<myFavorites> {
       ),
     );
   }
+
+
 }
