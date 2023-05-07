@@ -41,6 +41,9 @@ dependencies:
   rive: ^0.10.4
   lottie: ^2.3.2
   google_maps_flutter: ^2.2.6
+  google_sign_in: ^6.1.0
+  firebase_core: ^2.11.0
+  firebase_auth: ^4.5.0
 
 dev_dependencies:
   flutter_test:

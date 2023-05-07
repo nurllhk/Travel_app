@@ -19,6 +19,11 @@ class favori extends ChangeNotifier {
     notifyListeners();
   }
 
+  void DeleteLoveshow(int delshow){
+    favorites.remove(delshow);
+    notifyListeners();
+  }
+
 
 }
 

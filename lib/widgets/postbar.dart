@@ -40,7 +40,7 @@ class PostBar extends ConsumerWidget {
             child: InkWell(
               onTap: () {
                 if (ref.read(favoriteProvider).DoILove(index + 1)) {
-                  ref.read(favoriteProvider).DeleteLove(index + 1);
+                  ref.read(favoriteProvider).DeleteLoveshow(index + 1);
                 } else {
                   ref.read(favoriteProvider).addFavori(index + 1);
                 }

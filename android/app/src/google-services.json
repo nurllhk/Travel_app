@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "811016362991",
+    "project_id": "gezgor-d5e0b",
+    "storage_bucket": "gezgor-d5e0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811016362991:android:00dfeca67885660d7db41a",
+        "android_client_info": {
+          "package_name": "com.example.travleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811016362991-c858466k41mm90u8v9f32jar0m8gg2ui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travleapp",
+            "certificate_hash": "a9c278c0f0b01655e038e88b064fb7ac013e3b79"
+          }
+        },
+        {
+          "client_id": "811016362991-g1b7hacn9cqm88lannu1tk8rcqlrdps9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvKKYFqZF4qzw-hgxgj5OYEngoVbvEX_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811016362991-g1b7hacn9cqm88lannu1tk8rcqlrdps9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

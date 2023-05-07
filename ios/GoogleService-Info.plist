@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>811016362991-45n5lv7kes9cf8d50g02tgas0gd24mac.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.811016362991-45n5lv7kes9cf8d50g02tgas0gd24mac</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>811016362991-c858466k41mm90u8v9f32jar0m8gg2ui.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDEDGuoY6sB1i3BR-X6k9MQUS5V36jeeZg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>811016362991</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.travleapp</string>
+	<key>PROJECT_ID</key>
+	<string>gezgor-d5e0b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gezgor-d5e0b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:811016362991:ios:50867f686f2cdefd7db41a</string>
+</dict>
+</plist>

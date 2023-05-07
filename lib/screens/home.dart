@@ -27,7 +27,7 @@ class _HomeState extends ConsumerState<Home> {
     const myFavorites(),
     const addCity(),
     const location(),
-    const myProfile(),
+    const MyProfile(),
   ];
 
 /*
@@ -46,7 +46,7 @@ class _HomeState extends ConsumerState<Home> {
     final category = ref.watch(categoryProvider);
 
     return Scaffold(
-      appBar: currunindex == 3
+      appBar: currunindex == 3 || currunindex == 4
           ? null
           : const PreferredSize(
               preferredSize: Size.fromHeight(90.0), child: homeappbar()),
