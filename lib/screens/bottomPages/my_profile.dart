@@ -139,7 +139,6 @@ class _ProfileState extends ConsumerState<Profile> {
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
               child: Container(
-                
                 height: MediaQuery.of(context).size.height / 3.6,
                 color: const Color.fromRGBO(240, 240, 240, 0.9),
                 // 243 240 240
@@ -152,14 +151,14 @@ class _ProfileState extends ConsumerState<Profile> {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.network(image)),
-                   const  SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
                       FirebaseAuth.instance.currentUser!.displayName!,
                       style: const TextStyle(fontSize: 19),
                     ),
-                   const  SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -185,18 +184,17 @@ class _ProfileState extends ConsumerState<Profile> {
                           InkWell(
                             onTap: () async {
                               if (index == 4) {
-                               await SignOuthGoogle();
+                                await SignOuthGoogle();
                                 Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(builder: (context) {
                                   return const MyProfile();
                                 }));
                               }
-
                             },
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(30),
                               child: Container(
-                                color:const Color.fromRGBO(240, 240, 240, 0.9),
+                                color: const Color.fromRGBO(240, 240, 240, 0.9),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [

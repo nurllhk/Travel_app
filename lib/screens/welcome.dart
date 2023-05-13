@@ -1,12 +1,26 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 import 'package:lottie/lottie.dart';
 
 import 'home.dart';
 
-class welcome extends StatelessWidget {
+class welcome extends StatefulWidget {
   const welcome({Key? key}) : super(key: key);
 
+  @override
+  State<welcome> createState() => _welcomeState();
+}
+
+class _welcomeState extends State<welcome> {
+  @override
+  void initState() {
+    initialFirebase();
+    super.initState();
+  }
+  Future<void> initialFirebase() async {
+    await Firebase.initializeApp();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +48,7 @@ class welcome extends StatelessWidget {
                   const SizedBox(
                     height: 2,
                   ),
-                  Text("Dünyayamıza Gel", style: TextStyle(
+                  Text("Çok Gezen Mi Bilir ?", style: TextStyle(
 
                     color: Colors.white.withOpacity(0.8),
                     fontSize: 35,
