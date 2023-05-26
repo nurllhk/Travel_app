@@ -1,23 +1,14 @@
 # travleapp
 
+![Ekran Resmi 2023-05-12 11 28 28](https://github.com/nurllhk/Travel_app/assets/79688257/ec8e0238-d69b-4039-99cb-1c1782f56782)
+![Ekran Resmi 2023-05-12 11 28 42](https://github.com/nurllhk/Travel_app/assets/79688257/ca472f97-735c-4dfa-8d41-5b752557c775)
 
 
 
-
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/ab929ea4-b1a4-49db-bf2d-2aaa6d4d41dc" width="400">
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/04c7009f-1d24-4648-8b8b-10939bc30a20" width="400" height="770">
-
-
-
-
-
-
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/78cb87b9-9fc5-4493-bdf0-24f16fbfb975" width="400">
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/b81e6681-62ce-44ea-9ad3-c8aff27fd5ad" width="400">
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/e80f1c09-72c8-4876-8a70-969ebc1753d0" width="400">
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/0d3368c2-9ba3-4674-bc1b-d7ac18a99d26" width="400">
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/6ea12eaf-7d1c-456b-b7db-e0d3e84927fd" width="400">
-<img src="https://github.com/nurllhk/Travel_app/assets/79688257/ce9c5a1c-2ea6-4832-b586-455ae800d20d" width="400">
-
+![Adsız tasarım-2](https://github.com/nurllhk/Travel_app/assets/79688257/baf86882-fe88-4f5a-869c-edd3b07ac714)
+![Adsız tasarım-5](https://github.com/nurllhk/Travel_app/assets/79688257/cbe6f5c1-4e4c-4f30-b93b-b5e738668c0f)
+![Adsız tasarım-3](https://github.com/nurllhk/Travel_app/assets/79688257/f7aa9e12-d5f4-47c2-9d7d-c417c7f5155c)
+![Adsız tasarım-4](https://github.com/nurllhk/Travel_app/assets/79688257/b30bb77c-f8e6-4ab9-b21a-ae3cb790c609)
+![Adsız tasarım](https://github.com/nurllhk/Travel_app/assets/79688257/e52f97b2-2131-4cf8-acc9-1f8c4534bb99)
 
 
