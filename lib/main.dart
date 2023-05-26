@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:travleapp/screens/welcome.dart';
-import 'package:rive/rive.dart';
+
 void main(){
   runApp(ProviderScope(child: MyApp()));
 }
@@ -33,5 +33,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
 
 

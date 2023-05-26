@@ -1,9 +1,5 @@
 import 'dart:io';
 import 'dart:math';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,8 +13,6 @@ class addCity extends StatefulWidget {
 
 class _addCityState extends State<addCity> {
   var streamyonet = null;
-
-  FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +52,14 @@ class _addCityState extends State<addCity> {
     final ImagePicker _picker = ImagePicker();
     int deg = Random().nextInt(10000);
 
-    XFile? _file = await _picker.pickImage(source: ImageSource.camera);
-    var _profilref = FirebaseStorage.instance.ref('Gezdim/fotograflar/${deg}');
+    var _file = await _picker.pickImage(source: ImageSource.camera);
+    var _profilref =
+        await FirebaseStorage.instance.ref('Gezdim/fotograflar/${deg}');
 
     var _task = _profilref.putFile(File(_file!.path));
 
     _task.whenComplete(() async {
-      var _url = await _profilref.getDownloadURL();
-      print(_url);
+    // gönderilen dosya URL  var _url = await _profilref.getDownloadURL();
 
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: const Text('Yükleme İşlemi Tamamlandı'),
@@ -90,8 +84,6 @@ class _addCityState extends State<addCity> {
     var _task = _profileref.putFile(File(_file!.path));
 
     _task.whenComplete(() async {
-      var _url = await _profileref.getDownloadURL();
-
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: const Text('Yükleme İşlemi Tamamlandı'),
       ));

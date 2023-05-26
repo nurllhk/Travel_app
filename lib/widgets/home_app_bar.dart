@@ -39,7 +39,7 @@ class _homeappbarState extends State<homeappbar> {
             child: Row(
               children: const [
                 Icon(Icons.location_pin,color: Color(0xFFF65050),),
-                Text("Diyarbakır, TR", style: TextStyle(
+                Text("İstanbul, TR", style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w500
                 ),)

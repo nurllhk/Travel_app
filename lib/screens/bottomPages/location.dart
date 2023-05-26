@@ -12,17 +12,24 @@ class location extends StatefulWidget {
 class _locationState extends State<location> {
   static const CameraPosition _kLake = CameraPosition(
      // bearing: 192.8334901395799,
-      target: LatLng(41.068592, 29.045328),
+      target: LatLng(41.068593, 29.045329),
       //tilt: 59.440717697143555,
       zoom: 18);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
 
       body:GoogleMap(
 
         mapType: MapType.normal,
         initialCameraPosition: _kLake,
+markers: {
+  Marker(
+      consumeTapEvents: true,
+      markerId: MarkerId('default'),
+      position: _kLake.target,
+      )
+},
       ),
     );
   }
